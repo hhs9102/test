@@ -8,16 +8,16 @@ class Opstrings {
         
         char[] charArr;
         String temp;
-        int cnt=0; 
         for(String splitedStr : splitedStrArr){
           temp ="";
           charArr = splitedStr.toCharArray();
-          for(int i=charArr.length-1; i>=0; i--){
+          for(int i=charArr.length-1; i>=0; i--){   //문자열 reverse
             temp += Character.toString(charArr[i]);
           }          
           resultStr = resultStr + temp + "\n";
         }
-        resultStr = resultStr.substring(0, resultStr.length()-1);
+        
+        resultStr = resultStr.substring(0, resultStr.length()-1);   //마지막 '\n'제거
         return resultStr;
     }
     public static String horMirror (String strng) {
@@ -25,12 +25,10 @@ class Opstrings {
         String[] splitedStrArr = strng.split("\n");
         String resultStr = "";
         
-        char[] charArr;
-        String temp ="";
         for(int i=splitedStrArr.length-1, j=0; i>=0; i--, j++){
           resultStr = resultStr + splitedStrArr[i] + "\n"; 
         }
-        resultStr = resultStr.substring(0, resultStr.length()-1);
+        resultStr = resultStr.substring(0, resultStr.length()-1);   //마지막 '\n'제거
         return resultStr;
     }
     public static String oper(Function<String, String> operator, String s) {
